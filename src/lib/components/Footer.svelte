@@ -10,7 +10,7 @@
 
 <Footer class="m-3 rounded-lg border" footerType="logo">
 	<div class="sm:flex sm:items-center sm:justify-between">
-		<FooterBrand href="/" src="/logo_website.png" alt="Flowbite Logo" />
+		<FooterBrand href="/" src="/images/logo_website.png" alt="Logo" />
 		<FooterLinkGroup
 			ulClass="flex flex-wrap items-center my-5 text-sm text-gray-500 sm:mb-0 dark:text-gray-400"
 		>
