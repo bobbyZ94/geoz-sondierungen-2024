@@ -14,8 +14,8 @@
 		<FooterLinkGroup
 			ulClass="flex flex-wrap items-center my-5 text-sm text-gray-500 sm:mb-0 dark:text-gray-400"
 		>
-			<FooterLink href="/">Datenschutz</FooterLink>
-			<FooterLink href="/">Impressum</FooterLink>
+			<FooterLink href="/datenschutz">Datenschutz</FooterLink>
+			<FooterLink href="/impressum">Impressum</FooterLink>
 		</FooterLinkGroup>
 	</div>
 	<hr class="my-6 border-gray-200 dark:border-gray-700 sm:mx-auto lg:my-8" />
