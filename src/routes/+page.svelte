@@ -1,11 +1,10 @@
 <script lang="ts">
 	import Card from '$lib/components/Card.svelte'
-	import { Modal } from 'flowbite-svelte'
-	import { MobilePhoneSolid } from 'flowbite-svelte-icons'
-	import { EnvelopeSolid } from 'flowbite-svelte-icons'
-
-	// Leistungen modals
-	let showLeistungenRammkernsondierungen = false
+	import CardListLinkElement from '$lib/components/CardListLinkElement.svelte'
+	import { MobilePhoneSolid, EnvelopeSolid } from 'flowbite-svelte-icons'
+	import type { PageData } from './$types'
+	export let data: PageData
+	console.log(data)
 </script>
 
 <!-- About -->
@@ -18,70 +17,30 @@
 	imageUrl="/images/am_wasser.jpg"
 	reverseImg={false}
 >
-	<div class="flex flex-col gap-5">
-		<div>
-			Eine wesentliche Voraussetzung zur Lösung geotechnischer Aufgaben- und Problemstellungen ist
-			die Kenntnis des Untergrundes. Hier kommen wir ins Spiel und sichern mit <span
-				class="font-semibold">zuverlässigen Untersuchungen</span
-			> ihr Projekt ab.
-		</div>
-		<div>
-			Seit 2002 sind wir tätig in Sachen Geotechnik, Umweltgeotechnik und bohrbegleitende
-			Kampfmittelfreiheit. Unsere langjährige <span class="font-semibold">Erfahrung</span>
-			macht uns zum <span class="font-semibold">kompetenten</span> Partner für Ihre Projekte.
-		</div>
+	<div class="prose">
+		{@html data.was_machen_wir[0].text}
 	</div>
 </Card>
 
 <!-- Leistungen -->
-<Card
-	id="leistungen"
-	title="Unsere Leistungen"
-	showButtonLink={true}
-	buttonLinkUrl="/#kontakt"
-	buttonLinkText="Kontakt"
-	imageUrl="/images/proben.jpg"
-	reverseImg={false}
->
-	<div class="flex flex-col gap-5">
-		<ul class="list-outside list-disc pl-4">
-			<!-- svelte-ignore a11y-missing-attribute -->
-			<!-- svelte-ignore a11y-click-events-have-key-events -->
-			<!-- svelte-ignore a11y-no-static-element-interactions -->
-			<li on:click={() => showLeistungenRammkernsondierungen === true}>
-				Rammkernsondierungen und Rammsondierungen
-			</li>
-			<li></li>
-		</ul>
-	</div>
+<Card id="leistungen" title="Unsere Leistungen" imageUrl="/images/proben.jpg" reverseImg={false}>
+	<ul class="mt-4 list-outside list-disc pl-4">
+		{#each data.leistungen as leistung}
+			<CardListLinkElement slug={leistung.slug} linkText={leistung.title} />
+		{/each}
+	</ul>
 </Card>
-
-<!-- Leistungen Modals -->
-<Modal title="Terms of Service" bind:open={showLeistungenRammkernsondierungen} autoclose>
-	<p class="text-base leading-relaxed text-gray-500 dark:text-gray-400">
-		With less than a month to go before the European Union enacts new consumer privacy laws for its
-		citizens, companies around the world are updating their terms of service agreements to comply.
-	</p>
-	<p class="text-base leading-relaxed text-gray-500 dark:text-gray-400">
-		The European Union’s General Data Protection Regulation (G.D.P.R.) goes into effect on May 25
-		and is meant to ensure a common set of data rights in the European Union. It requires
-		organizations to notify users as soon as possible of high-risk data breaches that could
-		personally affect them.
-	</p>
-</Modal>
 
 <!-- Projekte -->
 <Card
 	id="projekte"
 	title="Wo sind wir im Einsatz?"
-	showButtonLink={true}
-	buttonLinkUrl="/#kontakt"
-	buttonLinkText="Kontakt"
-	imageUrl="/images/proben.jpg"
+	imageUrl="/images/umspannwerk.jpg"
 	reverseImg={false}
-	>Eine wesentliche Voraussetzung zur Lösung geotechnischer Aufgaben- und Problemstellungen ist die
-	Kenntnis des Untergrundes. Hier kommen wir ins Spiel und sichern mit zuverlässigen Untersuchungen
-	ihr Projekt ab.</Card
+>
+	<div class="prose">
+		{@html data.wo_sind_wir_im_einsatz[0].text}
+	</div></Card
 >
 
 <!-- Kontakt -->
@@ -89,26 +48,26 @@
 	id="kontakt"
 	title="Kontakt"
 	showButtonLink={false}
-	imageUrl="/images/proben.jpg"
+	imageUrl="/images/wald.jpg"
 	reverseImg={false}
 >
 	<div class="flex w-full flex-col gap-5">
-		<div>
-			Wenn Sie ein Angebot wünschen oder Fragen zu unseren Leistungen haben, können Sie uns gerne
-			<span class="font-semibold">telefonisch</span> oder per
-			<span class="font-semibold">E-Mail</span> kontaktieren:
+		<div class="prose">
+			{@html data.kontakt[0].text}
 		</div>
 		<div class="flex flex-col items-center gap-3">
-			<a href="mailto:info@geoz-sondierungen.de" class="flex gap-2"
-				><EnvelopeSolid />info@geoz-sondierungen.de</a
+			<a href={`mailto:${data.kontakt[0].email}`} class="flex gap-4"
+				><EnvelopeSolid />{data.kontakt[0].email}</a
 			>
-			<a href="tel:+491726763159" class="flex gap-2"><MobilePhoneSolid />+49 (0) 172 - 67 63 159</a>
+			<a href={`tel:${data.kontakt[0].tel}`} class="flex gap-4"
+				><MobilePhoneSolid />{data.kontakt[0].tel}</a
+			>
 		</div>
 		<div class="font-semibold">Postanschrift:</div>
 		<div class="flex flex-col items-center">
-			<div>GeoZ. Dipl.-Ing. Adam Zioltkowski</div>
-			<div>Lu-Röder-Straße 13</div>
-			<div>64331 Weiterstadt / Braunshardt</div>
+			<div>{data.kontakt[0].name}</div>
+			<div>{data.kontakt[0].strasse_und_hausnummer}</div>
+			<div>{data.kontakt[0].ort_und_plz}</div>
 		</div>
 	</div>
 </Card>
