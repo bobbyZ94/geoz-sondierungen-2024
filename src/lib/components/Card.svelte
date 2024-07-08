@@ -11,7 +11,7 @@
 </script>
 
 <div class="m-3 space-y-4" {id}>
-	<Card img={imageUrl} reverse={reverseImg} size="xl">
+	<Card img={imageUrl} reverse={reverseImg} size="xl" horizontal>
 		<h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">
 			{title}
 		</h5>

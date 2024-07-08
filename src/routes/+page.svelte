@@ -4,7 +4,6 @@
 	import { MobilePhoneSolid, EnvelopeSolid } from 'flowbite-svelte-icons'
 	import type { PageData } from './$types'
 	export let data: PageData
-	console.log(data)
 </script>
 
 <div class="flex flex-col gap-10">
@@ -16,7 +15,6 @@
 		buttonLinkUrl="/#kontakt"
 		buttonLinkText="Kontakt"
 		imageUrl="/images/am_wasser.jpg"
-		reverseImg={false}
 	>
 		<div class="prose">
 			{@html data.was_machen_wir[0].text}
@@ -24,7 +22,7 @@
 	</Card>
 
 	<!-- Leistungen -->
-	<Card id="leistungen" title="Unsere Leistungen" imageUrl="/images/proben.jpg" reverseImg={false}>
+	<Card id="leistungen" title="Unsere Leistungen" imageUrl="/images/proben.jpg">
 		<ul class="mt-4 list-outside list-disc pl-4">
 			{#each data.leistungen as leistung}
 				<CardListLinkElement slug={leistung.slug} linkText={leistung.title} />
@@ -33,26 +31,14 @@
 	</Card>
 
 	<!-- Projekte -->
-	<Card
-		id="projekte"
-		title="Wo sind wir im Einsatz?"
-		imageUrl="/images/umspannwerk.jpg"
-		reverseImg={false}
-	>
+	<Card id="projekte" title="Wo sind wir im Einsatz?" imageUrl="/images/umspannwerk.jpg">
 		<div class="prose">
 			{@html data.wo_sind_wir_im_einsatz[0].text}
 		</div></Card
 	>
 
 	<!-- Kontakt -->
-	<Card
-		id="kontakt"
-		title="Kontakt"
-		showButtonLink={false}
-		imageUrl="/images/wald.jpg"
-		reverseImg={false}
-		size="lg"
-	>
+	<Card id="kontakt" title="Kontakt" showButtonLink={false} imageUrl="/images/wald.jpg">
 		<div class="flex w-full flex-col gap-5">
 			<div class="prose">
 				{@html data.kontakt[0].text}
