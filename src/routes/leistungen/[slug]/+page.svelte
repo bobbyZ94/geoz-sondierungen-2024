@@ -3,7 +3,7 @@
 	export let data: PageData
 </script>
 
-<div class="m-3 rounded-md border border-gray-200 bg-white p-2 drop-shadow-sm">
-	<div class="mb-5 text-xl font-semibold">{data.title}</div>
+<div class="flex flex-col items-center p-5">
+	<div class="my-5 text-2xl font-semibold">{data.title}</div>
 	<div class="prose">{@html data.text}</div>
 </div>
