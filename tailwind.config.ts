@@ -1,4 +1,5 @@
-import flowbitePlugin from 'flowbite/plugin'
+import daisyui from 'daisyui'
+import typography from '@tailwindcss/typography'
 
 import type { Config } from 'tailwindcss'
 
@@ -11,26 +12,20 @@ export default {
 	theme: {
 		fontFamily: {
 			sans: ['Inter', 'sans-serif']
-		},
-		extend: {
-			colors: {
-				// flowbite-svelte
-				// green
-				primary: {
-					'50': '#f0fdf4',
-					'100': '#dcfce7',
-					'200': '#bbf7d0',
-					'300': '#86efac',
-					'400': '#4ade80',
-					'500': '#22c55e',
-					'600': '#16a34a',
-					'700': '#15803d',
-					'800': '#166534',
-					'900': '#14532d'
-				}
-			}
 		}
 	},
 
-	plugins: [require('@tailwindcss/typography'), flowbitePlugin]
+	plugins: [typography, daisyui],
+
+	// daisyUI config (optional - here are the default values)
+	daisyui: {
+		themes: ['light'], // false: only light + dark | true: all themes | array: specific themes like this ["light", "dark", "cupcake"]
+		darkTheme: 'dark', // name of one of the included themes for dark mode
+		base: true, // applies background color and foreground color for root element by default
+		styled: true, // include daisyUI colors and design decisions for all components
+		utils: true, // adds responsive and modifier utility classes
+		prefix: '', // prefix for daisyUI classnames (components, modifiers and responsive class names. Not colors)
+		logs: true, // Shows info about daisyUI version and used config in the console when building your CSS
+		themeRoot: ':root' // The element that receives theme color CSS variables
+	}
 } as Config

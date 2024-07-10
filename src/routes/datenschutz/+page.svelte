@@ -3,6 +3,4 @@
 	export let data: PageData
 </script>
 
-<div class="m-3 rounded-md border border-gray-200 bg-white p-2 drop-shadow-sm">
-	<div class="prose">{@html data.datenschutz[0].text}</div>
-</div>
+<div class="prose p-5">{@html data.datenschutz[0].text}</div>

@@ -1,23 +1,9 @@
-<script lang="ts">
-	import {
-		Footer,
-		FooterCopyright,
-		FooterLinkGroup,
-		FooterBrand,
-		FooterLink
-	} from 'flowbite-svelte'
-</script>
-
-<Footer class="m-3 w-full rounded-lg border" footerType="logo">
-	<div class="sm:flex sm:items-center sm:justify-between">
-		<FooterBrand href="/" src="/images/logo_website.png" alt="Logo" />
-		<FooterLinkGroup
-			ulClass="flex flex-wrap items-center my-5 text-sm text-gray-500 sm:mb-0 dark:text-gray-400"
-		>
-			<FooterLink href="/datenschutz">Datenschutz</FooterLink>
-			<FooterLink href="/impressum">Impressum</FooterLink>
-		</FooterLinkGroup>
-	</div>
-	<hr class="my-6 border-gray-200 dark:border-gray-700 sm:mx-auto lg:my-8" />
-	<FooterCopyright href="/" by="GeoZ." />
-</Footer>
+<footer class="footer footer-center rounded bg-base-200 p-10 text-base-content">
+	<nav class="grid grid-flow-col gap-4">
+		<a href="/datenschutz" class="link-hover link">Datenschutz</a>
+		<a href="/impressum" class="link-hover link">Impressum</a>
+	</nav>
+	<aside>
+		<p>Webdesign by robzio. Copyright © {new Date().getFullYear()}</p>
+	</aside>
+</footer>

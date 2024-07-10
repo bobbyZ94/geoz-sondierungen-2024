@@ -1,20 +1,38 @@
-<script lang="ts">
-	import { Navbar, NavBrand, NavLi, NavUl, NavHamburger } from 'flowbite-svelte'
-</script>
-
-<Navbar class="sticky top-0 z-20 bg-primary-100" let:NavContainer>
-	<NavContainer class="rounded-lg border bg-white px-5 py-2">
-		<NavBrand href="/">
-			<img src="/images/logo_website.png" class="sm:h-18 h-12" alt="Logo" />
-		</NavBrand>
-		<NavHamburger />
-		<NavUl
-			ulClass="bg-white border-none flex flex-col md:flex-row md:gap-10 md:mx-10 items-center pt-3 sm:pt-0 text-lg"
-		>
-			<NavLi href="/#ueberuns">Über Uns</NavLi>
-			<NavLi href="/#leistungen">Leistungen</NavLi>
-			<NavLi href="/#projekte">Projekte</NavLi>
-			<NavLi href="/#kontakt">Kontakt</NavLi>
-		</NavUl>
-	</NavContainer>
-</Navbar>
+<div class="navbar bg-base-100">
+	<div class="navbar-start lg:hidden">
+		<div class="dropdown">
+			<button class="btn btn-square btn-ghost">
+				<svg
+					xmlns="http://www.w3.org/2000/svg"
+					fill="none"
+					viewBox="0 0 24 24"
+					class="inline-block h-6 w-6 stroke-current"
+				>
+					<path
+						stroke-linecap="round"
+						stroke-linejoin="round"
+						stroke-width="2"
+						d="M4 6h16M4 12h16M4 18h16"
+					></path>
+				</svg>
+			</button>
+			<ul class="menu dropdown-content menu-md z-[1] mt-3 w-52 rounded-box bg-base-100 p-2 shadow">
+				<li><a href="/#ueberuns">Über Uns</a></li>
+				<li><a href="/#leistungen">Leistungen</a></li>
+				<li><a href="/#projekte">Projekte</a></li>
+				<li><a href="/#kontakt">Kontakt</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="navbar-start hidden lg:flex">
+		<ul class="menu menu-horizontal px-1 text-lg">
+			<li><a href="/#ueberuns">Über Uns</a></li>
+			<li><a href="/#leistungen">Leistungen</a></li>
+			<li><a href="/#projekte">Projekte</a></li>
+			<li><a href="/#kontakt">Kontakt</a></li>
+		</ul>
+	</div>
+	<div class="navbar-end">
+		<a href="/"><img src="/images/logo_website.png" class="h-12 lg:h-14" alt="Logo" /></a>
+	</div>
+</div>

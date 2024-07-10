@@ -4,16 +4,12 @@
 	import Footer from '$lib/components/Footer.svelte'
 </script>
 
-<div class="flex h-screen w-full flex-col items-center font-sans">
-	<div class="flex w-full flex-col items-center bg-primary-100">
+<div class="flex min-h-screen w-full flex-col items-center font-sans">
+	<div class="flex w-full max-w-5xl flex-grow flex-col">
 		<Navbar />
-		<div class="container flex w-full flex-grow items-center justify-center bg-primary-100">
-			<div>
-				<slot />
-			</div>
+		<div class="flex flex-grow items-center justify-center">
+			<slot />
 		</div>
-		<div class="container w-full bg-primary-100">
-			<Footer />
-		</div>
+		<Footer />
 	</div>
 </div>
