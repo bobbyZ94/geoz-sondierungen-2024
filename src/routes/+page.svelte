@@ -29,21 +29,25 @@
 	<!-- About -->
 	<div
 		id="ueberuns"
-		class="grid min-h-screen items-end lg:grid lg:scroll-mt-0 lg:grid-cols-2 lg:items-center"
+		class="scroll-mt-14 lg:grid lg:min-h-screen lg:scroll-mt-0 lg:grid-cols-3 lg:items-center"
 	>
-		<div class="p-5 lg:order-2">
+		<div class="p-5 lg:order-2 lg:col-span-1">
 			<h3 class="mb-5 text-2xl font-bold">Über Uns</h3>
 			<div class="prose">{@html data.was_machen_wir[0].text}</div>
 		</div>
-		<img src="/images/am_wasser.jpg" alt="am wasser" class="lg:order-1 lg:rounded lg:drop-shadow" />
+		<img
+			src="/images/am_wasser.jpg"
+			alt="am wasser"
+			class="lg:order-1 lg:col-span-2 lg:rounded lg:drop-shadow"
+		/>
 	</div>
 
 	<!-- Leistungen -->
 	<div
 		id="leistungen"
-		class="grid min-h-screen items-end lg:grid lg:scroll-mt-0 lg:grid-cols-2 lg:items-center"
+		class="scroll-mt-14 lg:grid lg:min-h-screen lg:scroll-mt-0 lg:grid-cols-3 lg:items-center"
 	>
-		<div class="p-5">
+		<div class="p-5 lg:col-span-1">
 			<h3 class="mb-5 text-2xl font-bold">Unsere Leistungen</h3>
 			<ul class="list-outside list-disc pl-4">
 				{#each data.leistungen as leistung}
@@ -51,15 +55,15 @@
 				{/each}
 			</ul>
 		</div>
-		<img src="/images/proben.jpg" alt="proben" class="lg:rounded lg:drop-shadow" />
+		<img src="/images/proben.jpg" alt="proben" class="lg:col-span-2 lg:rounded lg:drop-shadow" />
 	</div>
 
 	<!-- Projekte -->
 	<div
 		id="projekte"
-		class="grid min-h-screen items-end lg:grid lg:scroll-mt-0 lg:grid-cols-2 lg:items-center"
+		class="scroll-mt-14 lg:grid lg:min-h-screen lg:scroll-mt-0 lg:grid-cols-3 lg:items-center"
 	>
-		<div class="p-5 lg:order-2">
+		<div class="p-5 lg:order-2 lg:col-span-1">
 			<h3 class="mb-5 text-2xl font-bold">Wo sind wir im Einsatz?</h3>
 			<div class="prose">
 				{@html data.wo_sind_wir_im_einsatz[0].text}
@@ -68,16 +72,16 @@
 		<img
 			src="/images/umspannwerk.jpg"
 			alt="umspannwerk"
-			class="lg:order-1 lg:rounded lg:drop-shadow"
+			class="lg:order-1 lg:col-span-2 lg:rounded lg:drop-shadow"
 		/>
 	</div>
 
 	<!-- Kontakt -->
 	<div
 		id="kontakt"
-		class="grid min-h-screen items-end lg:grid lg:scroll-mt-0 lg:grid-cols-2 lg:items-center"
+		class="scroll-mt-14 lg:grid lg:min-h-screen lg:scroll-mt-0 lg:grid-cols-3 lg:items-center"
 	>
-		<div class="flex flex-col gap-5 p-5">
+		<div class="flex flex-col gap-5 p-5 lg:col-span-2">
 			<h3 class="mb-5 text-2xl font-bold">Kontakt</h3>
 			<div class="prose">
 				{@html data.kontakt[0].text}
@@ -97,11 +101,7 @@
 				<div>{data.kontakt[0].ort_und_plz}</div>
 			</div>
 		</div>
-		<img
-			src="/images/chef2.jpg"
-			alt="chef"
-			class="lg:h-[400px] lg:w-[400px] lg:rounded-full lg:drop-shadow"
-		/>
+		<img src="/images/chef2.jpg" alt="chef" class="lg:rounded-full lg:drop-shadow" />
 	</div>
 
 	<!-- Zitat -->
