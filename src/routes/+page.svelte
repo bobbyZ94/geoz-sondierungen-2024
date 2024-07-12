@@ -1,13 +1,13 @@
 <script lang="ts">
-	import Card from '$lib/components/Card.svelte'
 	import Hero from '$lib/components/Hero.svelte'
+	import Quote from '$lib/components/Quote.svelte'
 	import CardListLinkElement from '$lib/components/CardListLinkElement.svelte'
 	import { MobilePhoneSolid, EnvelopeSolid } from 'flowbite-svelte-icons'
 	import type { PageData } from './$types'
 	export let data: PageData
 </script>
 
-<div class="bg-primary-100 flex flex-col gap-10">
+<div class="bg-primary-100 flex flex-col items-center gap-10">
 	<!-- Hero -->
 	<Hero heroText={data.hero[0].text} />
 	<!-- About -->
@@ -89,12 +89,5 @@
 	</div>
 
 	<!-- Zitat -->
-	<div class="mb-60 mt-40 px-5">
-		<div class="text-center text-lg italic lg:text-xl">
-			"Zuverlässige Arbeit, präzise Messungen und zügige Ergebnisse. Das macht uns aus."
-		</div>
-		<div class="mt-5 text-center lg:text-lg">
-			- Ihr Ansprechpartner, <br /> Dipl.-Ing. Adam Zioltkowski
-		</div>
-	</div>
+	<Quote quoteText={data.zitat[0].text} />
 </div>

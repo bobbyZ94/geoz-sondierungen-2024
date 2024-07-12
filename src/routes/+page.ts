@@ -9,6 +9,9 @@ export const load: PageLoad = async ({ params }) => {
 	const hero = await pb.collection('hero').getFullList({
 		sort: '+created'
 	})
+	const zitat = await pb.collection('zitat').getFullList({
+		sort: '+created'
+	})
 	const leistungen = await pb.collection('leistungen').getFullList({
 		sort: '+rank'
 	})
@@ -21,5 +24,5 @@ export const load: PageLoad = async ({ params }) => {
 	const kontakt = await pb.collection('kontakt').getFullList({
 		sort: '-created'
 	})
-	return { leistungen, was_machen_wir, wo_sind_wir_im_einsatz, kontakt, hero }
+	return { leistungen, was_machen_wir, wo_sind_wir_im_einsatz, kontakt, hero, zitat }
 }
