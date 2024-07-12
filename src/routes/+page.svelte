@@ -1,9 +1,9 @@
 <script lang="ts">
-	import Hero from '$lib/components/Hero.svelte'
-	import ImageLinks from '$lib/components/ImageLinks.svelte'
-	import ImageText from '$lib/components/ImageText.svelte'
-	import Kontakt from '$lib/components/Kontakt.svelte'
-	import Quote from '$lib/components/Quote.svelte'
+	import Hero from '$lib/components/Frontpage/Hero.svelte'
+	import ImageLinks from '$lib/components//Frontpage/ImageLinks.svelte'
+	import ImageText from '$lib/components//Frontpage/ImageText.svelte'
+	import Kontakt from '$lib/components/Frontpage/Kontakt.svelte'
+	import Quote from '$lib/components/Frontpage/Quote.svelte'
 	import type { PageData } from './$types'
 	export let data: PageData
 </script>

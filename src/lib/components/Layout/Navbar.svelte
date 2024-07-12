@@ -17,7 +17,7 @@
 				</svg>
 			</button>
 			<ul class="menu dropdown-content menu-lg z-[1] mt-3 w-60 rounded-box bg-base-100 p-2 shadow">
-				<li><a href="/#ueberuns">Über Uns</a></li>
+				<li><a href="/#ueberuns">Über uns</a></li>
 				<li><a href="/#leistungen">Leistungen</a></li>
 				<li><a href="/#projekte">Projekte</a></li>
 				<li><a href="/#kontakt">Kontakt</a></li>
@@ -26,7 +26,7 @@
 	</div>
 	<div class="navbar-start hidden lg:flex">
 		<ul class="menu menu-horizontal px-1 text-lg">
-			<li><a href="/#ueberuns">Über Uns</a></li>
+			<li><a href="/#ueberuns">Über uns</a></li>
 			<li><a href="/#leistungen">Leistungen</a></li>
 			<li><a href="/#projekte">Projekte</a></li>
 			<li><a href="/#kontakt">Kontakt</a></li>
