@@ -7,7 +7,7 @@
 	id="kontakt"
 	class="scroll-mt-14 lg:grid lg:min-h-screen lg:scroll-mt-0 lg:grid-cols-3 lg:items-center"
 >
-	<div class="flex flex-col gap-5 p-5 lg:col-span-2">
+	<div class="mb-10 flex flex-col gap-5 p-5 lg:col-span-2 lg:mb-0">
 		<h3 class="mb-5 text-2xl font-bold">Kontakt</h3>
 		<div class="prose">
 			{@html kontakt.text}

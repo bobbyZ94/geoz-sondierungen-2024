@@ -7,7 +7,7 @@
 <li class="mb-4">
 	<a href={`/leistungen/${slug}`} class="flex w-full justify-between text-left">
 		<div class="hover:underline">{linkText}</div>
-		<div>
+		<div class="pl-3">
 			<ArrowUpRightFromSquareOutline />
 		</div>
 	</a>
