@@ -1,31 +1,15 @@
 <script lang="ts">
 	import Card from '$lib/components/Card.svelte'
+	import Hero from '$lib/components/Hero.svelte'
 	import CardListLinkElement from '$lib/components/CardListLinkElement.svelte'
-	import { MobilePhoneSolid, EnvelopeSolid, AngleDownOutline } from 'flowbite-svelte-icons'
+	import { MobilePhoneSolid, EnvelopeSolid } from 'flowbite-svelte-icons'
 	import type { PageData } from './$types'
 	export let data: PageData
 </script>
 
 <div class="bg-primary-100 flex flex-col gap-10">
 	<!-- Hero -->
-	<div class="hero min-h-screen" style="background-image: url(/images/dph2.jpg);">
-		<div class="hero-overlay bg-opacity-60"></div>
-		<div class="hero-content text-center text-neutral-content">
-			<div class="flex max-w-md flex-col items-center gap-5">
-				<h1 class="mb-5 text-4xl font-bold">Geotechnische Untersuchungen</h1>
-				<h3 class="mb-2 text-2xl font-bold">Sondierungen</h3>
-				<h3 class="mb-2 text-2xl font-bold">Probenahmen</h3>
-				<h3 class="mb-2 text-2xl font-bold">Bohrbegleitende Kampfmittelortung</h3>
-				<h3 class="mb-2 text-2xl font-bold">Einmessen</h3>
-				<h3 class="mb-2 text-2xl font-bold">aus einer Hand.</h3>
-				<button
-					><a href="/#ueberuns"><AngleDownOutline class="mt-5 animate-bounce" size="xl" /></a
-					></button
-				>
-			</div>
-		</div>
-	</div>
-
+	<Hero heroText={data.hero[0].text} />
 	<!-- About -->
 	<div
 		id="ueberuns"
