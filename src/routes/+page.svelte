@@ -8,6 +8,14 @@
 	export let data: PageData
 </script>
 
+<svelte:head>
+	<title>GeoZ - Geotechnische Untersuchungen</title>
+	<meta
+		name="description"
+		content="Geotechnische Untersuchungen, Sondierungen, Probenahme, Bohrbegleitende Kampfmittelortung und Einmessen aus einer Hand."
+	/>
+</svelte:head>
+
 <div class="bg-primary-100 flex flex-col items-center gap-10">
 	<Hero heroText={data.hero[0].text} />
 
