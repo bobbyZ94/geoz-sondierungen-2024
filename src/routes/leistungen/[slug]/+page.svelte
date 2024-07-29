@@ -14,20 +14,18 @@
 </svelte:head>
 
 <div class="mb-5 flex flex-col items-center p-5">
-	<div class="my-5 text-2xl font-semibold">{data.title}</div>
+	<div class="my-5 text-2xl font-semibold lg:text-3xl">{data.title}</div>
 	<div class="prose">{@html data.text}</div>
-	<div class="">
-		<div>
-			{#if data.download}
-				<div class="text-xl font-semibold">Dokumente zum Herunterladen:</div>
-				{#each data.download as download}
-					<a
-						href={`${PUBLIC_BACKEND_URL}/api/files/${data.collectionId}/${data.id}/${download}`}
-						download
-						class="prose my-2 block rounded-md bg-gray-200 p-2">{download}</a
-					>
-				{/each}
-			{/if}
-		</div>
+	<div>
+		{#if data.download.length > 0}
+			<div class="mt-10 text-xl font-semibold">Dokumente zum Herunterladen:</div>
+			{#each data.download as download}
+				<a
+					href={`${PUBLIC_BACKEND_URL}/api/files/${data.collectionId}/${data.id}/${download}`}
+					download
+					class="prose my-2 block rounded-md bg-gray-200 p-2">{download}</a
+				>
+			{/each}
+		{/if}
 	</div>
 </div>
